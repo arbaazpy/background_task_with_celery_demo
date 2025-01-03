@@ -126,6 +126,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Celery configuration in settings.py
-CELERY_BROKER_URL = 'redis://localhost:6380/0'  # or RabbitMQ
+CELERY_BROKER_URL = 'redis://localhost:6380'  # or RabbitMQ
 CELERY_RESULT_BACKEND = 'django-db'
-

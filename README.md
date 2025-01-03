@@ -1,3 +1,52 @@
+# Setup
+## Installing packages
+### 1. create virtual environment and activate
+```bash
+uv venv
+source .venv/bin/activate
+```
+### 2. Install dependencies
+```bash
+uv sync
+```
+or 
+```
+uv pip install -r pyproject.toml
+```
+
+## Running project
+### 1. Run migration
+```bash
+python manage.py migrate
+```
+### 2. Run server
+```
+python manage.py runserver
+```
+### 3. Run celery
+```bash
+celery -A background_task_demo worker --loglevel=info
+```
+### 4. Create superuser to access admin site (optional)
+```bash
+python manage.py createsuperuser
+```
+### 5. Open server
+Server wil be running on `http://127.0.0.1:8000/` \
+Access admin site at `http://127.0.0.1:8000/admin`
+
+
+## Access APIs
+### 1. Create user
+`POST http://127.0.0.1:8000/api/user/create/`
+```json
+{
+    "first_name": "John",
+    "last_name": "Doe"
+}
+```
+
+
 # Debugging Redis
 
 
